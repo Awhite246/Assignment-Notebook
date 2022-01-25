@@ -12,6 +12,7 @@
 		3F81B4932791DC7900A85571 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F81B4922791DC7900A85571 /* ContentView.swift */; };
 		3F81B4952791DC8000A85571 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F81B4942791DC8000A85571 /* Assets.xcassets */; };
 		3F81B4982791DC8000A85571 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F81B4972791DC8000A85571 /* Preview Assets.xcassets */; };
+		3FC22B6C2799C98600A4EE07 /* AddItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC22B6B2799C98600A4EE07 /* AddItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		3F81B4942791DC8000A85571 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F81B4972791DC8000A85571 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3F81B4992791DC8000A85571 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3FC22B6B2799C98600A4EE07 /* AddItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				3F81B4902791DC7900A85571 /* Assignment_NotebookApp.swift */,
 				3F81B4922791DC7900A85571 /* ContentView.swift */,
+				3FC22B6B2799C98600A4EE07 /* AddItem.swift */,
 				3F69616A279872950082A427 /* Assignment.swift */,
 				3F81B4942791DC8000A85571 /* Assets.xcassets */,
 				3F81B4992791DC8000A85571 /* Info.plist */,
@@ -141,6 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FC22B6C2799C98600A4EE07 /* AddItem.swift in Sources */,
 				3F69616B279872950082A427 /* Assignment.swift in Sources */,
 				3F81B4932791DC7900A85571 /* ContentView.swift in Sources */,
 				3F81B4912791DC7900A85571 /* Assignment_NotebookApp.swift in Sources */,
