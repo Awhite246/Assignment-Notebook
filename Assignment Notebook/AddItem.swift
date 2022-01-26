@@ -14,77 +14,75 @@ struct AddItem: View {
     @State private var dueDate = Date()
     @Environment(\.presentationMode) var presentationMode
     static let subjects = ["Math", "Science", "English", "World Language", "History", "PE", "Mobile Apps"]
-    @State private var dummy = Color.black
+    @State private var colorPlaceHolder = Color.black
+    @State private var spinAnimate = 0.0
+    let backgroundImage : Int
     var body: some View {
         NavigationView {
-            Form {
-                Picker("Subject", selection: $subject) {
-                    ForEach(Self.subjects, id: \.self) { subject in
-                        Text(subject)
-                            .foregroundColor(subjectColor(color: subject))
+            Image("background \(backgroundImage)")
+                .resizable()
+                .frame(width: 400, height: 800, alignment: .center)
+                .overlay(
+                    Form {
+                        Picker("Subject", selection: $subject) {
+                            ForEach(Self.subjects, id: \.self) { subject in
+                                Text(subject)
+                                    .foregroundColor(subjectColor(color: subject))
+                            }
+                        }
+                        TextField("Homework", text: $homework)
+                        DatePicker("Due Date", selection: $dueDate, displayedComponents: .date)
                     }
-                }
-                TextField("Homework", text: $homework)
-                DatePicker("Due Date", selection: $dueDate, displayedComponents: .date)
-            }
-            .navigationBarTitle("Add New Assignment", displayMode: .inline)
-            .navigationBarItems(
-                leading: Button("Cancel"){
-                    presentationMode.wrappedValue.dismiss()
-                },
-                trailing: Button("Save"){
-                    let item = AssignmentItem(id: UUID(), subject: subject, homework: homework, dueDate: dueDate)
-                    assignments.assignment.append(item)
-                    presentationMode.wrappedValue.dismiss()
-                }
-                .disabled(!(subject.count > 0 && homework.count > 0)))
+                    .navigationBarTitle("Add New Assignment", displayMode: .inline)
+                    .navigationBarItems(
+                        leading: Button(action: {
+                            presentationMode.wrappedValue.dismiss()
+                        }) {
+                            Image(systemName: "x.square")
+                                .imageScale(.large)
+                        },
+                        trailing: Button("Save"){
+                            let item = AssignmentItem(id: UUID(), subject: subject, homework: homework, dueDate: dueDate)
+                            assignments.assignment.append(item)
+                            presentationMode.wrappedValue.dismiss()
+                        }
+                        .disabled(!(subject.count > 0 && homework.count > 0)))
+                    .onAppear {
+                        // For list
+                        UITableView.appearance().backgroundColor = .clear
+                        // For list cells
+                        UITableViewCell.appearance().backgroundColor = .clear
+                        // navigation view
+                        UITableView.appearance().backgroundColor = .clear
+                    }
+                )
         }
+        .preferredColorScheme(.dark)
     }
     func subjectColor (color : String) -> Color {
         switch color {
         case "Math":
-            return ColorList().cMath
+            return ContentView().colorList.cMath
         case "Science":
-            return ColorList().cScience
+            return ContentView().colorList.cScience
         case "English":
-            return ColorList().cEnglish
+            return ContentView().colorList.cEnglish
         case "World Language":
-            return ColorList().cWorld
+            return ContentView().colorList.cWorld
         case "History":
-            return ColorList().cHistory
+            return ContentView().colorList.cHistory
         case "PE":
-            return ColorList().cPE
+            return ContentView().colorList.cPE
         case "Mobile Apps":
-            return ColorList().cMobile
+            return ContentView().colorList.cMobile
         default:
             return .black
-        }
-    }
-    func changeColor (subject : String, color : Color) {
-        switch subject {
-        case "Math":
-            //ColorList()
-            break
-        case "Science":
-            break
-        case "English":
-            break
-        case "World Language":
-            break
-        case "History":
-            break
-        case "PE":
-            break
-        case "Mobile Apps":
-            break
-        default:
-            break
         }
     }
 }
 
 struct AddItem_Previews: PreviewProvider {
     static var previews: some View {
-        AddItem(assignments: Assignment())
+        AddItem(assignments: Assignment(), backgroundImage: 1)
     }
 }

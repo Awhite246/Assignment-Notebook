@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3F69616B279872950082A427 /* Assignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F69616A279872950082A427 /* Assignment.swift */; };
+		3F7A239D27A1DA6C00CFCF4B /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7A239C27A1DA6C00CFCF4B /* SettingView.swift */; };
 		3F81B4912791DC7900A85571 /* Assignment_NotebookApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F81B4902791DC7900A85571 /* Assignment_NotebookApp.swift */; };
 		3F81B4932791DC7900A85571 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F81B4922791DC7900A85571 /* ContentView.swift */; };
 		3F81B4952791DC8000A85571 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F81B4942791DC8000A85571 /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 
 /* Begin PBXFileReference section */
 		3F69616A279872950082A427 /* Assignment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assignment.swift; sourceTree = "<group>"; };
+		3F7A239C27A1DA6C00CFCF4B /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		3F81B48D2791DC7900A85571 /* Assignment Notebook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Assignment Notebook.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F81B4902791DC7900A85571 /* Assignment_NotebookApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assignment_NotebookApp.swift; sourceTree = "<group>"; };
 		3F81B4922791DC7900A85571 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 				3F81B4902791DC7900A85571 /* Assignment_NotebookApp.swift */,
 				3F81B4922791DC7900A85571 /* ContentView.swift */,
 				3FC22B6B2799C98600A4EE07 /* AddItem.swift */,
+				3F7A239C27A1DA6C00CFCF4B /* SettingView.swift */,
 				3F69616A279872950082A427 /* Assignment.swift */,
 				3F81B4942791DC8000A85571 /* Assets.xcassets */,
 				3F81B4992791DC8000A85571 /* Info.plist */,
@@ -145,6 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FC22B6C2799C98600A4EE07 /* AddItem.swift in Sources */,
+				3F7A239D27A1DA6C00CFCF4B /* SettingView.swift in Sources */,
 				3F69616B279872950082A427 /* Assignment.swift in Sources */,
 				3F81B4932791DC7900A85571 /* ContentView.swift in Sources */,
 				3F81B4912791DC7900A85571 /* Assignment_NotebookApp.swift in Sources */,
