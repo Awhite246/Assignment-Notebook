@@ -13,7 +13,6 @@ struct ContentView: View {
     @State private var showingSettings = false
     //variable to be able to check the edit mode state
     @State var mode: EditMode = .inactive
-    @State public var colorList = ColorList()
     @State private var backgroundImage = 4
     var body: some View {
         NavigationView {
@@ -47,6 +46,9 @@ struct ContentView: View {
                     .fullScreenCover(isPresented: $showingAddItem, content: {
                         AddItem(assignments: assignmentList, backgroundImage: backgroundImage)
                     })
+                    .fullScreenCover(isPresented: $showingSettings, content: {
+                        SettingView(backgroundNumber: backgroundImage)
+                    })
                     .navigationBarItems(
                         leading:
                             EditButton(),
@@ -72,22 +74,25 @@ struct ContentView: View {
     func subjectColor (color : String) -> Color {
         switch color {
         case "Math":
-            return colorList.cMath
+            return .red
         case "Science":
-            return colorList.cScience
+            return .green
         case "English":
-            return colorList.cEnglish
+            return .blue
         case "World Language":
-            return colorList.cWorld
+            return .pink
         case "History":
-            return colorList.cHistory
+            return .orange
         case "PE":
-            return colorList.cPE
+            return .purple
         case "Mobile Apps":
-            return colorList.cMobile
+            return .yellow
         default:
             return .black
         }
+    }
+    func changeBackground (num : Int){
+        backgroundImage = num
     }
     //Makes the background color of the list clear so you can see the image behind it
     init() {
@@ -95,21 +100,9 @@ struct ContentView: View {
         UITableView.appearance().backgroundColor = .clear
         // For list cells
         UITableViewCell.appearance().backgroundColor = .clear
-        // navigation view
-        UITableView.appearance().backgroundColor = .clear
         
     }
 }
-struct ColorList {
-    var cMath = Color.red
-    var cScience = Color.green
-    var cEnglish = Color.blue
-    var cWorld = Color.pink
-    var cHistory = Color.orange
-    var cPE = Color.purple
-    var cMobile = Color.yellow
-}
-
 struct AssignmentItem: Identifiable, Codable {
     var id = UUID()
     var subject = String()

@@ -14,8 +14,6 @@ struct AddItem: View {
     @State private var dueDate = Date()
     @Environment(\.presentationMode) var presentationMode
     static let subjects = ["Math", "Science", "English", "World Language", "History", "PE", "Mobile Apps"]
-    @State private var colorPlaceHolder = Color.black
-    @State private var spinAnimate = 0.0
     let backgroundImage : Int
     var body: some View {
         NavigationView {
@@ -29,6 +27,7 @@ struct AddItem: View {
                                 Text(subject)
                                     .foregroundColor(subjectColor(color: subject))
                             }
+                            
                         }
                         TextField("Homework", text: $homework)
                         DatePicker("Due Date", selection: $dueDate, displayedComponents: .date)
@@ -62,23 +61,24 @@ struct AddItem: View {
     func subjectColor (color : String) -> Color {
         switch color {
         case "Math":
-            return ContentView().colorList.cMath
+            return .red
         case "Science":
-            return ContentView().colorList.cScience
+            return .green
         case "English":
-            return ContentView().colorList.cEnglish
+            return .blue
         case "World Language":
-            return ContentView().colorList.cWorld
+            return .pink
         case "History":
-            return ContentView().colorList.cHistory
+            return .orange
         case "PE":
-            return ContentView().colorList.cPE
+            return .purple
         case "Mobile Apps":
-            return ContentView().colorList.cMobile
+            return .yellow
         default:
             return .black
         }
     }
+    
 }
 
 struct AddItem_Previews: PreviewProvider {
