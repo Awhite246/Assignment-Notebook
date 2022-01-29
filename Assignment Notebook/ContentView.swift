@@ -51,13 +51,9 @@ struct ContentView: View {
                             EditButton(),
                         trailing:
                         Button(action: {
-                            if (mode.isEditing) {
-                                showingSettings = true
-                            } else {
                                 showingAddItem = true
-                            }
                         }) {
-                            Image(systemName: mode.isEditing ? "gearshape" : "plus.app")
+                            Image("plus.app")
                         .imageScale(.large)
                         })
                     //assignes mode variable to the current state edit mode is in
