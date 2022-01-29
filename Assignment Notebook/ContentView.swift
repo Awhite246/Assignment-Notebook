@@ -13,10 +13,10 @@ struct ContentView: View {
     @State private var showingSettings = false
     //variable to be able to check the edit mode state
     @State var mode: EditMode = .inactive
-    @State private var backgroundImage = 4
     var body: some View {
         NavigationView {
-            Image("background \(backgroundImage)")
+            //background image
+            Image("background 7")
                 .resizable()
                 .frame(width: 400, height: 800, alignment: .center)
                 .overlay(
@@ -44,10 +44,7 @@ struct ContentView: View {
                     .navigationBarTitle("Assignment Notebook", displayMode: .inline)
                     .navigationBarItems(leading: EditButton())
                     .fullScreenCover(isPresented: $showingAddItem, content: {
-                        AddItem(assignments: assignmentList, backgroundImage: backgroundImage)
-                    })
-                    .fullScreenCover(isPresented: $showingSettings, content: {
-                        SettingView(backgroundNumber: backgroundImage)
+                        AddItem(assignments: assignmentList)
                     })
                     .navigationBarItems(
                         leading:
@@ -90,9 +87,6 @@ struct ContentView: View {
         default:
             return .black
         }
-    }
-    func changeBackground (num : Int){
-        backgroundImage = num
     }
     //Makes the background color of the list clear so you can see the image behind it
     init() {

@@ -14,10 +14,10 @@ struct AddItem: View {
     @State private var dueDate = Date()
     @Environment(\.presentationMode) var presentationMode
     static let subjects = ["Math", "Science", "English", "World Language", "History", "PE", "Mobile Apps"]
-    let backgroundImage : Int
     var body: some View {
         NavigationView {
-            Image("background \(backgroundImage)")
+            //background image
+            Image("background 7")
                 .resizable()
                 .frame(width: 400, height: 800, alignment: .center)
                 .overlay(
@@ -34,6 +34,7 @@ struct AddItem: View {
                     }
                     .navigationBarTitle("Add New Assignment", displayMode: .inline)
                     .navigationBarItems(
+                        //cancel button
                         leading: Button(action: {
                             presentationMode.wrappedValue.dismiss()
                         }) {
@@ -51,8 +52,6 @@ struct AddItem: View {
                         UITableView.appearance().backgroundColor = .clear
                         // For list cells
                         UITableViewCell.appearance().backgroundColor = .clear
-                        // navigation view
-                        UITableView.appearance().backgroundColor = .clear
                     }
                 )
         }
@@ -83,6 +82,6 @@ struct AddItem: View {
 
 struct AddItem_Previews: PreviewProvider {
     static var previews: some View {
-        AddItem(assignments: Assignment(), backgroundImage: 1)
+        AddItem(assignments: Assignment())
     }
 }
